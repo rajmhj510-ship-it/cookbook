@@ -23,7 +23,7 @@ function initCarousel() {
 	let currentIndex = 0;
 	let isAnimating = false;
 
-	/* CREATE CARDS */
+	/* CREATE CARDS FROM JSON */
 	recipes.forEach((recipe) => {
 		const card = document.createElement("div");
 		card.classList.add("card");
@@ -74,11 +74,11 @@ function initCarousel() {
 		}, 800);
 	}
 
-	/* NAV BUTTONS */
+	/* NAV */
 	leftBtn.addEventListener("click", () => updateCarousel(currentIndex - 1));
 	rightBtn.addEventListener("click", () => updateCarousel(currentIndex + 1));
 
-	/* SCROLL DOWN BUTTON */
+	/* SCROLL DOWN */
 	scrollBtn.addEventListener("click", () => {
 		searchSection.scrollIntoView({ behavior: "smooth" });
 
@@ -86,7 +86,7 @@ function initCarousel() {
 		hero.style.pointerEvents = "none";
 	});
 
-	/* SHOW HERO WHEN SCROLL UP */
+	/* SHOW HERO AGAIN ON SCROLL UP */
 	window.addEventListener("scroll", () => {
 		if (window.scrollY < 100) {
 			hero.style.opacity = "1";
