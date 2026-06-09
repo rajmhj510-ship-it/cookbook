@@ -82,7 +82,7 @@ function initCarousel() {
 
 		autoPlayTimer = setInterval(() => {
 			updateCarousel(currentIndex + 1);
-		}, 30000); // 30 seconds
+		}, 15000); // 15 seconds
 	}
 
 	/* NAV BUTTONS */
