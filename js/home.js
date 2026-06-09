@@ -1,9 +1,9 @@
 const recipes = [
 	{
-		title: "Arabic Shawarma",
+		title: "Shawarma",
 		time: "30 min",
 		difficulty: "Easy",
-		image: "assets/images/arabic/shawarma.jpg"
+		image: "assets/images/arabic/chicken-shawarma.png"
 	},
 	{
 		title: "Chinese Noodles",
