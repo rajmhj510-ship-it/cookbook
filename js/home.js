@@ -22,8 +22,9 @@ function initCarousel() {
 
 	let currentIndex = 0;
 	let isAnimating = false;
+	let autoPlayTimer = null;
 
-	/* CREATE CARDS FROM JSON */
+	/* CREATE CARDS */
 	recipes.forEach((recipe) => {
 		const card = document.createElement("div");
 		card.classList.add("card");
@@ -39,6 +40,7 @@ function initCarousel() {
 
 	const cards = document.querySelectorAll(".card");
 
+	/* MAIN UPDATE FUNCTION */
 	function updateCarousel(newIndex) {
 		if (isAnimating) return;
 		isAnimating = true;
@@ -74,9 +76,25 @@ function initCarousel() {
 		}, 800);
 	}
 
-	/* NAV */
-	leftBtn.addEventListener("click", () => updateCarousel(currentIndex - 1));
-	rightBtn.addEventListener("click", () => updateCarousel(currentIndex + 1));
+	/* AUTO PLAY */
+	function startAutoPlay() {
+		clearInterval(autoPlayTimer);
+
+		autoPlayTimer = setInterval(() => {
+			updateCarousel(currentIndex + 1);
+		}, 30000); // 30 seconds
+	}
+
+	/* NAV BUTTONS */
+	leftBtn.addEventListener("click", () => {
+		updateCarousel(currentIndex - 1);
+		startAutoPlay();
+	});
+
+	rightBtn.addEventListener("click", () => {
+		updateCarousel(currentIndex + 1);
+		startAutoPlay();
+	});
 
 	/* SCROLL DOWN */
 	scrollBtn.addEventListener("click", () => {
@@ -86,7 +104,7 @@ function initCarousel() {
 		hero.style.pointerEvents = "none";
 	});
 
-	/* SHOW HERO AGAIN ON SCROLL UP */
+	/* SHOW HERO ON SCROLL UP */
 	window.addEventListener("scroll", () => {
 		if (window.scrollY < 100) {
 			hero.style.opacity = "1";
@@ -94,6 +112,18 @@ function initCarousel() {
 		}
 	});
 
+	/* OPTIONAL: pause on hover */
+	const carousel = document.querySelector(".carousel-container");
+
+	carousel.addEventListener("mouseenter", () => {
+		clearInterval(autoPlayTimer);
+	});
+
+	carousel.addEventListener("mouseleave", () => {
+		startAutoPlay();
+	});
+
 	/* INIT */
 	updateCarousel(0);
+	startAutoPlay();
 }
