@@ -9,15 +9,14 @@
 
 <body>
 
+<!-- HERO -->
 <section id="hero">
 
   <h1 class="about-title">FEATURED RECIPES</h1>
 
   <div class="carousel-container">
     <button class="nav-arrow left">‹</button>
-
     <div class="carousel-track"></div>
-
     <button class="nav-arrow right">›</button>
   </div>
 
@@ -29,16 +28,20 @@
   <button class="scroll-down">↓ Scroll Down</button>
 
 </section>
-  
-<!-- LOGO SECTION -->
-<section id="logo-section">
-  <img src="assets/images/logo.png" alt="Recipe Logo" class="site-logo">
-</section>
-  
+
+<!-- SEARCH SECTION (LOGO INSIDE) -->
 <section id="search-section">
+
+  <div class="logo-wrapper">
+    <img src="assets/images/logo.png" alt="Recipe Logo" class="site-logo">
+  </div>
+
   <h2>Search Recipes</h2>
+
   <input type="text" placeholder="Search recipes..." />
+
   <div class="search-results"></div>
+
 </section>
 
 <script src="js/home.js"></script>
