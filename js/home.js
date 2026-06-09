@@ -3,7 +3,6 @@ let recipes = [];
 async function loadRecipes() {
 	const res = await fetch("data/index.json");
 	recipes = await res.json();
-
 	initCarousel();
 }
 
@@ -11,22 +10,23 @@ loadRecipes();
 
 function initCarousel() {
 	const track = document.querySelector(".carousel-track");
-	const dotsContainer = document.querySelector(".dots");
-
 	const titleEl = document.querySelector(".recipe-title");
 	const metaEl = document.querySelector(".recipe-meta");
 
 	const leftBtn = document.querySelector(".nav-arrow.left");
 	const rightBtn = document.querySelector(".nav-arrow.right");
 
+	const hero = document.querySelector("#hero");
+	const searchSection = document.querySelector("#search-section");
+	const scrollBtn = document.querySelector(".scroll-down");
+
 	let currentIndex = 0;
 	let isAnimating = false;
 
-	// CREATE CARDS
-	recipes.forEach((recipe, i) => {
+	/* CREATE CARDS */
+	recipes.forEach((recipe) => {
 		const card = document.createElement("div");
 		card.classList.add("card");
-		card.dataset.index = i;
 
 		card.innerHTML = `<img src="${recipe.image}" alt="${recipe.title}">`;
 
@@ -35,15 +35,9 @@ function initCarousel() {
 		});
 
 		track.appendChild(card);
-
-		const dot = document.createElement("div");
-		dot.classList.add("dot");
-		dot.addEventListener("click", () => updateCarousel(i));
-		dotsContainer.appendChild(dot);
 	});
 
 	const cards = document.querySelectorAll(".card");
-	const dots = document.querySelectorAll(".dot");
 
 	function updateCarousel(newIndex) {
 		if (isAnimating) return;
@@ -71,35 +65,35 @@ function initCarousel() {
 			else card.classList.add("hidden");
 		});
 
-		dots.forEach((dot, i) => {
-			dot.classList.toggle("active", i === currentIndex);
-		});
-
-		// TEXT UPDATE
 		const r = recipes[currentIndex];
-		titleEl.style.opacity = 0;
-		metaEl.style.opacity = 0;
-
-		setTimeout(() => {
-			titleEl.textContent = r.title;
-			metaEl.textContent = `${r.time} • ${r.difficulty}`;
-			titleEl.style.opacity = 1;
-			metaEl.style.opacity = 1;
-		}, 250);
+		titleEl.textContent = r.title;
+		metaEl.textContent = `${r.time} • ${r.difficulty}`;
 
 		setTimeout(() => {
 			isAnimating = false;
 		}, 800);
 	}
 
+	/* NAV BUTTONS */
 	leftBtn.addEventListener("click", () => updateCarousel(currentIndex - 1));
 	rightBtn.addEventListener("click", () => updateCarousel(currentIndex + 1));
 
-	document.addEventListener("keydown", (e) => {
-		if (e.key === "ArrowLeft") updateCarousel(currentIndex - 1);
-		if (e.key === "ArrowRight") updateCarousel(currentIndex + 1);
+	/* SCROLL DOWN BUTTON */
+	scrollBtn.addEventListener("click", () => {
+		searchSection.scrollIntoView({ behavior: "smooth" });
+
+		hero.style.opacity = "0";
+		hero.style.pointerEvents = "none";
 	});
 
-	// INIT
+	/* SHOW HERO WHEN SCROLL UP */
+	window.addEventListener("scroll", () => {
+		if (window.scrollY < 100) {
+			hero.style.opacity = "1";
+			hero.style.pointerEvents = "auto";
+		}
+	});
+
+	/* INIT */
 	updateCarousel(0);
 }
