@@ -31,7 +31,7 @@
     "title": "Szechuan Fish",
     "category": "Chinese",
     "file": "data/chinese/szechuan-fish.json",
-    "image": "assets/images/chinese/fish-szechuan-sauce.png",
+    "image": "assets/images/arabic/fish-szechuan-sauce.png",
     "time": "40 min",
     "difficulty": "Medium"
   },
@@ -40,7 +40,7 @@
     "title": "Kung Pao Chicken",
     "category": "Chinese",
     "file": "data/chinese/kung-pao-chicken.json",
-    "image": "assets/images/chinese/kung-pao-chicken.png",
+    "image": "assets/images/arabic/kung-pao-chicken.png",
     "time": "40 min",
     "difficulty": "Medium"
   },
@@ -49,7 +49,7 @@
     "title": "Chili Oil",
     "category": "Chinese",
     "file": "data/chinese/chili-oil.json",
-    "image": "assets/images/chinese/chili-oil.png",
+    "image": "assets/images/arabic/chili-oil.png",
     "time": "40 min",
     "difficulty": "Medium"
   },
@@ -58,7 +58,7 @@
     "title": "Fried Fish with Tartar Sauce",
     "category": "Continental",
     "file": "data/continental/fried-fish-with-tartar-sauce.json",
-    "image": "assets/images/continental/fried-fish-with-tartar-sauce.png",
+    "image": "assets/images/arabic/fried-fish-with-tartar-sauce.png",
     "time": "40 min",
     "difficulty": "Medium"
   },
@@ -67,7 +67,7 @@
     "title": "Pancakes",
     "category": "Continental",
     "file": "data/continental/pancakes.json",
-    "image": "assets/images/continental/pancakes.png",
+    "image": "assets/images/arabic/pancakes.png",
     "time": "40 min",
     "difficulty": "Medium"
     },
@@ -76,7 +76,7 @@
     "title": "Chicken Chettinad",
     "category": "Indian",
     "file": "data/indian/chicken-chettinad.json",
-    "image": "assets/images/indian/chicken-chettinad.png",
+    "image": "assets/images/arabic/chicken-chettinad.png",
     "time": "40 min",
     "difficulty": "Medium"
     },
@@ -85,7 +85,7 @@
     "title": "Ven Pongal (Savory South Indian Rice & Lentil Porridge)",
     "category": "Indian",
     "file": "data/indian/ven-pongal.json",
-    "image": "assets/images/indian/ven-pongal.png",
+    "image": "assets/images/arabic/ven-pongal.png",
     "time": "40 min",
     "difficulty": "Medium"
       },
@@ -94,7 +94,7 @@
     "title": "Puri (Deep-Fried Bread))",
     "category": "Indian",
     "file": "data/indian/puri.json",
-    "image": "assets/images/indian/puri.png",
+    "image": "assets/images/arabic/puri.png",
     "time": "40 min",
     "difficulty": "Medium"
       },
@@ -103,7 +103,7 @@
     "title": "Chicken Cacciatore",
     "category": "Italian",
     "file": "data/italian/chicken-cacciatore.json",
-    "image": "assets/images/italian/chicken-cacciatore.png",
+    "image": "assets/images/arabic/chicken-cacciatore.png",
     "time": "1 hr 20 min",
     "difficulty": "Medium"
     },
@@ -112,7 +112,7 @@
     "title": "Chimichanga",
     "category": "Mexican",
     "file": "data/mexican/chimichanga.json",
-    "image": "assets/images/mexican/chimichanga.png",
+    "image": "assets/images/arabic/chimichanga.png",
     "time": "1 hr 20 min",
     "difficulty": "Medium"
     },
@@ -121,7 +121,7 @@
     "title": "Jhol Mo:Mo (Soup MO:MO)",
     "category": "Nepali",
     "file": "data/nepali/jhol-momo.json",
-    "image": "assets/images/nepali/jhol-momo.png",
+    "image": "assets/images/arabic/jhol-momo.png",
     "time": "1 hr 20 min",
     "difficulty": "Medium"
     },
@@ -130,7 +130,7 @@
     "title": "Buff Steamed Mo:Mo",
     "category": "Nepali",
     "file": "data/nepali/buff-steamed-momo.json",
-    "image": "assets/images/nepali/buff-steamed-momo.png",
+    "image": "assets/images/arabic/buff-steamed-momo.png",
     "time": "1 hr 20 min",
     "difficulty": "Medium"
         },
@@ -139,7 +139,7 @@
     "title": "Pad Thai",
     "category": "Thai",
     "file": "data/thai/pad-thai.json",
-    "image": "assets/images/thai/pad-thai.png",
+    "image": "assets/images/arabic/pad-thai.png",
     "time": "1 hr 20 min",
     "difficulty": "Medium"
   }
